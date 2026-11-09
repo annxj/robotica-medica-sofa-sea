@@ -1,0 +1,53 @@
+{
+  "units": {"length": "mm", "force": "N", "time": "s", "stress": "MPa"},
+  "geometry": {
+    "outer_diameter_mm": 1.93,
+    "inner_diameter_mm": 1.49,
+    "wall_thickness_mm": 0.22,
+    "total_length_mm": 100.0,
+    "rigid_length_mm": 40.0,
+    "flexible_length_mm": 60.0,
+    "tendon_offset_y_mm": 0.60
+  },
+  "material": {
+    "name": "Nitinol",
+    "young_load_mpa": 77000.0,
+    "young_unload_mpa": 65000.0,
+    "poisson_ratio": 0.33,
+    "density_kg_per_mm3_reference": 6.45e-6,
+    "density_status": "Riferimento dal glossario; verificare l'unità richiesta dal componente SOFA scelto"
+  },
+  "sea": {
+    "rest_length_mm": 20.0,
+    "stiffness_baseline_n_per_mm": 1.2,
+    "damping_n_s_per_mm": 1.5,
+    "spring_hysteresis_n": 0.45,
+    "material_hysteresis_n": 0.40,
+    "motor_step_mm": 0.35,
+    "max_tendon_force_n": 10.0
+  },
+  "environment": {
+    "characteristic_size_mm": 20.0,
+    "soft_object_young_mpa": 0.005,
+    "soft_object_poisson_ratio": 0.45,
+    "friction_coefficient": 0.2,
+    "contact_force_min_n": 0.010,
+    "contact_force_target_n": 0.020,
+    "contact_force_max_n": 0.050,
+    "contact_stability_window_s": 5.0,
+    "contact_oscillation_limit_percent": 30.0
+  },
+  "simulation": {"dt_s": 0.01},
+  "campaign": {
+    "k_identification_n_per_mm": [0.3, 0.6, 1.2, 2.4, 4.8, 9.6, 50.0],
+    "k_validation_n_per_mm": [0.9, 3.4],
+    "k_sensitivity_n_per_mm": [1.2, 2.4, 4.8],
+    "spring_hysteresis_sensitivity_n": [0.0, 0.45, 0.9],
+    "damping_sensitivity_n_s_per_mm": [0.5, 1.5, 5.0],
+    "scenarios": ["free", "rigid", "soft"]
+  },
+  "experiment_assumptions": {
+    "u_max_mm": 6.0,
+    "note": "Valore iniziale presente nel piano operativo; confermare e documentare prima della campagna definitiva."
+  }
+}
